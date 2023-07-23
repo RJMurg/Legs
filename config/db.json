@@ -1,0 +1,13 @@
+{
+    "host": "[hostname]",
+    "user": "[username]",
+    "password": "[password]",
+    "database": "[database]",
+    "port": 1,
+    "ssl": true,
+    "statement_timeout": 10000,
+    "query_timeout": 10000,
+    "connect_timeout": 10000,
+    "application_name": "[name]",
+    "idle_in_transaction_session_timeout": 10000
+}

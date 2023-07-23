@@ -9,6 +9,10 @@ Legs is
 - Simple configuration
 - Site-based, and priority-based alerts in final HTML (e.g. Maintenance alerts, site-specific alerts, etc.)
 - Calendar-specific alerts and data (e.g. Christmas theme, out-of-office, etc.)
+- Support for standalone and Docker deployments
 
 ## Installation and Configuration
 All documentation can be found in [docs](docs/).
+
+## TO-DO
+- [ ] Port defined either in a config file or via Command-line arguments
