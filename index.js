@@ -1,10 +1,14 @@
 // Modules
 const express = require('express');
+const ejs = require('ejs');
 const pg = require('pg');
 
 // Express Boilerplate
 const app = express();
+app.set('view engine', 'ejs');
+app.engine('html', ejs.renderFile);
 app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public');
 const port = 3000;
 
 // Postgres Boilerplate
@@ -21,7 +25,7 @@ app.get('/', (req, res) => {
         config = require(`./config/${customHeader}.json`);
     }
     catch(err){
-        console.log(err);
+        console.log(customHeader + " not found");
     }
 
 
@@ -31,8 +35,8 @@ app.get('/', (req, res) => {
         // To-do :)
     }
     else {
-        // If it doesn't, render the 404 page
-        res.sendFile('public/404.html', {root: __dirname});
+        // If it doesn't, render the error page
+        res.render('error.html', {error: "404", reason: "Legs Error: 1"});
     }
 });
 
