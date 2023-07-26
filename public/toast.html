@@ -1,0 +1,85 @@
+<div class="toast">
+    <button class="toast-close" onclick="this.parentElement.style.display='none';">&times;</button>
+    <h1 class="toast-title"><%= title %></h1>
+    <p class="toast-text"><%= text %></p>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+    :root{
+        --legs-toast-white: #FFFFEC;
+        --legs-toast-black: #131515;
+        --legs-toast-red: #FF3633;
+        --legs-toast-orange: #FEA120;
+        --legs-toast-green: #83D883;
+        --legs-toast-blue: #84B1C2;
+        --legs-toast-purple: #C185BD;
+    }
+
+    .toast{
+        z-index: 9999;
+        position: fixed;
+        font-family: 'IBM Plex Mono', monospace;
+        background-color: var(--legs-toast-<%- colour %>);
+        color: var(--legs-toast-<%- text_colour %>);
+        animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+
+        /* Firefox */
+        -moz-animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+
+        /* Safari and Chrome */
+        -webkit-animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+
+        /* Opera */
+        -o-animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+
+        /* IE9+ */
+        -ms-animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+        box-shadow: 5px 5px 25px 1px var(--legs-toast-black);
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .toast-title{
+        align-self: flex-start;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .toast-text{
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .toast-close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #FFFFEC;
+        cursor: pointer;
+    }
+
+    @keyframes slideIn {
+        from {
+            left: -100%;
+        }
+        to {
+            left: 10px;
+        }
+    }
+</style>

@@ -17,6 +17,13 @@ const port = 3000;
 // Express Routes
 app.get('/', (req, res) => {
     // Read the custom header
+    // If it's empty or null, render the error page
+    if(req. headers['Legs-SSR-Site'] != 'undefined'){
+        res.render('error.html', {error: "404", reason: "Legs Error: 1"});
+        return;
+    }
+
+    // Header exists, check if config file exists
     const customHeader = req.headers['Legs-SSR-Site'];
     var config = null;
     
